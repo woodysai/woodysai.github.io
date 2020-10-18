@@ -131,6 +131,7 @@ $( 'document' ).ready(function() {
 
     function open_video(){
         document.getElementById("vido").style.cssText = "display:block;";
+
         document.getElementById("hw_vido").play();
         }
     $('#balloons_flying').click(function () {
@@ -221,6 +222,21 @@ $( 'document' ).ready(function() {
     });
     $('#hw_greeting').click(function () {
         audio1.pause(); 
+        var elem = document.getElementById('b11');
+        elem.parentNode.removeChild(elem);
+        elem = document.getElementById('b22');
+        elem.parentNode.removeChild(elem);
+        elem = document.getElementById('b33');
+        elem.parentNode.removeChild(elem);
+        elem = document.getElementById('b44');
+        elem.parentNode.removeChild(elem);
+        elem = document.getElementById('b55');
+        elem.parentNode.removeChild(elem);
+        elem = document.getElementById('b66');
+        elem.parentNode.removeChild(elem);
+        elem = document.getElementById('b77');
+        elem.parentNode.removeChild(elem);
+        
         open_video();
         
     });
