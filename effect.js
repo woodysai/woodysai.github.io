@@ -1,10 +1,12 @@
 $(window).load(function () {
     $('.loading').fadeOut('fast');
     $('.container').fadeIn('fast');
+    document.getElementById("vido").style.cssText = "display:none;";
 });
-$('document').ready(function () {
+$( document ).ready(function() {
     var vw;
     $(window).resize(function () {
+       
         vw = $(window).width() / 2;
         $('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
         // $('#b11').animate({top: 240, left: vw - 350}, 500);
@@ -14,13 +16,14 @@ $('document').ready(function () {
         // $('#b55').animate({top: 240, left: vw + 50}, 500);
         // $('#b66').animate({top: 240, left: vw + 150}, 500);
         // $('#b77').animate({top: 240, left: vw + 250}, 500);
-          $('#b11').animate({top: 240, left: vw - vw/1}, 500);  
-          $('#b22').animate({top: 240, left: vw - vw/1.5}, 500);
-          $('#b33').animate({top: 240, left: vw - vw/3}, 500);  
-          $('#b44').animate({top: 240, left: vw - vw/10}, 500); 
-          $('#b55').animate({top: 240, left: vw + vw/6}, 500);  
-          $('#b66').animate({top: 240, left: vw + vw/2}, 500);  
-          $('#b77').animate({top: 240, left: vw + vw/1.3}, 500);
+        $('#b11').animate({top: 240, left: vw - vw/1}, 500);  
+        $('#b22').animate({top: 240, left: vw - vw/1.5}, 500);
+        $('#b33').animate({top: 240, left: vw - vw/3}, 500);  
+        $('#b44').animate({top: 240, left: vw - vw/10}, 500); 
+        $('#b55').animate({top: 240, left: vw + vw/6}, 500);  
+        $('#b66').animate({top: 240, left: vw + vw/2}, 500);  
+        $('#b77').animate({top: 240, left: vw + vw/1.3}, 500);
+          
     });
 
     $('#turn_on').click(function () {
@@ -54,8 +57,8 @@ $('document').ready(function () {
             $('#play2').fadeIn('slow');
         });
     });
+    var audio1 = $('.song1')[0];
     $('#play2').click(function () {
-        var audio1 = $('.song1')[0];
         audio.pause();
         audio1.play();
         $(this).fadeOut('slow').delay(time).promise().done(function () {
@@ -126,6 +129,10 @@ $('document').ready(function () {
         });
     }
 
+    function open_video(){
+        document.getElementById("vido").style.cssText = "display:block;";
+        document.getElementById("hw_vido").play();
+        }
     $('#balloons_flying').click(function () {
         $('.balloon-border').animate({top: -vw}, 8000);
         $('#b1,#b4,#b5,#b7').addClass('balloons-rotate-behaviour-one');
@@ -207,11 +214,18 @@ $('document').ready(function () {
             });
             // body...
         }
-
         msgLoop(0);
-
+        $(this).fadeOut('slow').delay(time).promise().done(function () {
+            $('#hw_greeting').fadeIn('slow');
+        });
+    });
+    $('#hw_greeting').click(function () {
+        audio1.pause(); 
+        open_video();
+        
     });
 });
+
 
 
 //alert('hello');

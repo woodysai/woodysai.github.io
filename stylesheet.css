@@ -1275,9 +1275,21 @@ audio {
 	bottom: 0;
 	padding:10px 0px 10px 0px;
 }
-#play, #play2, #bannar_coming, #balloons_flying,#cake_fadein,#light_candle,#form_submit,#wish_message,#story {
+
+#headerPopup{
+	width:75%;
+	margin:0 auto;
+  }
+  
+#headerPopup iframe{
+	width:100%;
+	margin:0 auto;
+}
+
+#play, #play2, #bannar_coming, #balloons_flying,#cake_fadein,#light_candle,#form_submit,#wish_message,#story,#hw_greeting {
 	display: none;
 }
+
 
 .cake-cover {
 	margin-top: 50px;
@@ -1316,8 +1328,9 @@ audio {
     }
 
 
-
-    /*controlling tablet width*/
+	#vido{ width:544px; height:960px;  margin:auto; }    
+	
+	
  /*   @media only screen and (max-width: 720px){
     	.container {
     		-webkit-transform: scale(0.9);
