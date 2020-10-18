@@ -3,7 +3,7 @@ $(window).load(function () {
     $('.container').fadeIn('fast');
     document.getElementById("vido").style.cssText = "display:none;";
 });
-$( document ).ready(function() {
+$( 'document' ).ready(function() {
     var vw;
     $(window).resize(function () {
        
